@@ -1,0 +1,10 @@
+<form action="{% url 'django.contrib.auth.views.login' %}" method="post" style="margin-bottom: 0;">
+    {% csrf_token %}
+    <pre>
+    User: <input type="text" style="width: 300px; margin-bottom: 8px;"
+    name="username" autocomplete="off" autofocus><br>
+    Pass: <input type="password" style="width: 300px; margin-bottom: 8px;"
+    name="password" autocomplete="off" autofocus><br>
+    <input type="submit" value="Submit">
+    </pre>
+</form>

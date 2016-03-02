@@ -1,0 +1,26 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html><head><title>msgbored</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body style="background-color: #000000; color: #ffffff;">
+
+<h1 style="margin-bottom:0;">msgbored <span style="font-size: 50%; font-weight: normal;">-- {{ username }}
+    <a href="{% url 'django.contrib.auth.views.logout' %}" style="color: #ffff00">(logout)</a></span></h1>
+
+<div>
+<pre>
+{% for msg in msg_list %}  {{ msg }}
+{% endfor %}
+</pre>
+
+<form action="msg" method="post" style="margin-bottom: 0;">
+    {% csrf_token %}
+    <input type="text" style="width: 500px; margin-bottom: 8px; background-color: #000000; color: #ffffff; border:1px solid #99ff99;" name="message" autocomplete="off" autofocus><br>
+</form>
+<form action="destroy" method="post" style="margin-top: 0;">
+    {% csrf_token %}
+    <input type="submit" style="width: 300px; background-color: #000000; color: #ff6666; border:1px solid #ff6666;" value="Destroy these silly messages">
+</form>
+
+</div>
+</body>
+</html>
